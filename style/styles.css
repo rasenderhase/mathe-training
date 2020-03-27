@@ -27,9 +27,11 @@ footer {
 }
 
 #multiple-results div:hover {
-    background: aquamarine;
-    transition: background-color;
     cursor: pointer;
+}
+
+#multiple-results div:active {
+    background: aquamarine;
 }
 
 div.clear-float {
