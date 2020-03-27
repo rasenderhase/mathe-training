@@ -1,6 +1,8 @@
 
 export function random (min, max) {
-    max = max ? max : min;
-    min = max ? min : 0;
-    return Math.round(Math.random() * (max - min) - 0.5) + min;
+    if (!max) {
+        max = min;
+        min = 1;
+    }
+    return Math.round(Math.random() * (max - min + 1) - 0.5) + min;
 }
