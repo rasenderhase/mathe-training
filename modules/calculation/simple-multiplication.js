@@ -15,8 +15,8 @@ export function createTask(paremeters) {
             let wrongResult;
 
             do {
-                wrongResult = Utility.random(10) * Utility.random(10);
-            } while (wrongResult === result);
+                wrongResult = Utility.random(100);
+            } while (wrongResult === result || multipleChoiceResults.includes(wrongResult));
             multipleChoiceResults.push(wrongResult);
         }
         multipleChoiceResults.splice(Utility.random(0, paremeters.difficulty), 0, result);
