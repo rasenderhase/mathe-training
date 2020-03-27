@@ -12,6 +12,7 @@
     <meta name="apple-mobile-web-app-capable" content="yes"/>
     <meta name="apple-mobile-web-app-status-bar-style" content="black"/>
     <title>Mathe-Training</title>
+    <link rel="stylesheet" href="style/styles.css" type="text/css">
 </head>
 <body>
 <main id="page" class="page">
@@ -38,10 +39,11 @@
         </fieldset>
         <button id="start" type="submit">Starten</button>
     </form>
-    <form id="result-form">
+    <form id="result-form" class="result-form">
         <div id="task-text"></div>
-        <div id="manual-result" style="display: none"><label for="manual-result-input">=</label><input id="manual-result-input" name="manual-result" type="number" required="required"></div>
-        <div id="multiple-results" style="display: none"></div>
+        <div id="manual-result" style="display: none"><label for="manual-result-input" aria-label="ist gleich"></label><input id="manual-result-input" name="manual-result" type="number" required="required"></div>
+        <span id="multiple-results" style="display: none"></span>
+        <div class="clear-float"></div>
         <button id="confirm" type="submit">OK</button>
         <button id="finish" type="button">Beenden</button>
     </form>

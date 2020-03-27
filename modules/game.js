@@ -11,6 +11,12 @@ class Game {
             ev.preventDefault();
             this.startTask();
         }));
+
+        document.getElementById("multiple-results").addEventListener("click", (ev => {
+            if ("true" === ev.target.getAttribute("data-is-result")) {
+                this.startTask();
+            }
+        }));
     }
 
     start() {
@@ -59,7 +65,7 @@ class Game {
 
         } else {
             multipleResultsDiv.style.display = "none";
-            manualResultDiv.style.display = "";
+            manualResultDiv.style.display = "block";
             manualResultInput.setAttribute("required", "required");
         }
     }

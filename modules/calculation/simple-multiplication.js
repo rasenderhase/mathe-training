@@ -5,7 +5,7 @@ export function createTask(paremeters) {
     let mult1 = Utility.random(10);
     let mult2 = Utility.random(10);
 
-    let text = mult1 + "&middot;" + mult2;
+    let text = mult1 + "&middot;" + mult2 + " =&nbsp;";
 
     let result = mult1 * mult2;
 

@@ -1,0 +1,38 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, SansSerif;
+    font-size: 24px;
+    padding: 0;
+    margin: 0;
+}
+
+footer {
+    font-size: 10px;
+}
+
+.result-form {
+    font-size: 2em;
+}
+
+#multiple-results div {
+    margin: 0.1em;
+    border: aquamarine 0.2em solid;
+    background: deepskyblue;
+    float: left;
+    width: 1.6em;
+    height: 1.6em;
+}
+
+#multiple-results div:hover {
+    background: aquamarine;
+    transition: background-color;
+    cursor: pointer;
+}
+
+div.clear-float {
+    float: none;
+    clear: both;
+}
