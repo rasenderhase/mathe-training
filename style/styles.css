@@ -92,7 +92,7 @@ input {
     font-family: var(--font-family-result);
     background-color: var(--color-background1);
     color: white;
-    border: 0.2em green;
+    border: var(--color-secondary1) 0.2em solid;
     margin: 0.1em;
     text-align: right;
     width: 2em;

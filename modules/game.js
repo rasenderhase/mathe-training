@@ -21,10 +21,11 @@ class Game {
 
                 // failed!
                 manualResultInput.focus();
-                manualResultInput.setSelectionRange(0, manualInputValue.length)
+                manualResultInput.select();
             }
 
             //input has bad format
+            manualResultInput.select();
         }));
 
         document.getElementById("multiple-results").addEventListener("click", (ev => {
