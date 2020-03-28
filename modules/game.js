@@ -9,12 +9,29 @@ class Game {
 
         document.getElementById("result-form").addEventListener("submit", (ev => {
             ev.preventDefault();
-            this.startTask();
+            let manualResultInput = document.getElementById("manual-result-input");
+            let manualInputValue = manualResultInput.value;
+
+            let inputNumber = parseInt(manualInputValue);
+
+            if (!isNaN(inputNumber)) {
+                if (inputNumber === this.task.result) {
+                    this.startTask();
+                }
+
+                // failed!
+                manualResultInput.focus();
+                manualResultInput.setSelectionRange(0, manualInputValue.length)
+            }
+
+            //input has bad format
         }));
 
         document.getElementById("multiple-results").addEventListener("click", (ev => {
             if ("true" === ev.target.getAttribute("data-is-result")) {
                 this.startTask();
+            } else {
+                // failed !
             }
         }));
     }
@@ -30,7 +47,9 @@ class Game {
         let parameters = this.parameterses[index];
 
         this.task = Calculation[parameters.name].createTask(parameters);
-        document.querySelector("#manual-result [name='manual-result']").value = "";
+        let manualResultInput = document.getElementById("manual-result-input");
+        manualResultInput.value = "";
+        manualResultInput.focus();
 
         this.setUiStates();
     }

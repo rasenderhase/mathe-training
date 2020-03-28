@@ -15,3 +15,7 @@ document.getElementById("parameters-form").addEventListener("submit", (ev) => {
     new Game(parameters).start();
     document.getElementById("result-form").scrollIntoView();
 });
+
+window.onbeforeunload = function () {
+    window.scrollTo(0, 0);
+}
