@@ -24,6 +24,27 @@
         </div>
     </header>
     <form id="parameters-form" action="#result-form" role="form">
+        <fieldset id="SimpleAddition">
+            <legend>Addition</legend>
+            <ul>
+                <li>
+                    <label class="checkbox-container">
+                        <input id="Addition-selected" name="selected" type="checkbox" checked="checked" aria-label="auswählen">
+                        <span class="checkmark"></span>
+                    </label>
+                </li>
+                <li>
+                    <label for="Addition-difficulty">Schwierigkeitsgrad</label>
+                    <div class="slidecontainer">
+                        <input id="Addition-difficulty" name="difficulty" type="range" min="1" max="10" class="slider">
+                    </div>
+                </li>
+                <li>
+                    <label for="Addition-to">Zahlen bis</label>
+                    <input id="Addition-to" name="to" type="number" min="10" value="10">
+                </li>
+            </ul>
+        </fieldset>
         <fieldset id="SimpleMultiplication">
             <legend>Kleines 1 mal 1</legend>
             <ul>
@@ -51,7 +72,7 @@
         </div>
         <span id="multiple-results" style="display: none"></span>
         <div class="clear-float"></div>
-        <button id="finish" type="button">Beenden</button>
+        <button id="finish" type="button">Beenden</button><p class="score">Punkte: <span id="score"></span></p>
     </form>
 </main>
 <footer class="footer" role="contentinfo">

@@ -2,43 +2,71 @@ import * as Calculation from "./calculation.js"
 import * as Utility from "./utility.js"
 
 class Game {
-    constructor(parameterses) {
-        this.parameterses = parameterses.filter(function (value) {
-            return value.selected;
-        });
+    constructor() {
+        this.score = 0;
 
+        // parse manual input on submit
         document.getElementById("result-form").addEventListener("submit", (ev => {
             ev.preventDefault();
-            let manualResultInput = document.getElementById("manual-result-input");
-            let manualInputValue = manualResultInput.value;
-
-            let inputNumber = parseInt(manualInputValue);
-
-            if (!isNaN(inputNumber)) {
-                if (inputNumber === this.task.result) {
-                    this.startTask();
-                }
-
-                // failed!
+            let status = this.validateManualInput();
+            if (status === "success") {
+                this.score += this.task.success();
+                this.startTask();
+            } else {
+                this.task.failed();
+                let manualResultInput = document.getElementById("manual-result-input");
                 manualResultInput.focus();
                 manualResultInput.select();
             }
-
-            //input has bad format
-            manualResultInput.select();
         }));
 
+        // automatic parse after input
+        document.getElementById("manual-result-input").addEventListener("keyup", (() => {
+            let status = this.validateManualInput();
+            if (status === "success") {
+                this.score += this.task.success();
+                this.startTask();
+            } else if (status === "failed") {
+                this.task.failed();
+                let manualResultInput = document.getElementById("manual-result-input");
+                manualResultInput.focus();
+                manualResultInput.select();
+            }
+        }));
+
+        // click on multiple choice input
         document.getElementById("multiple-results").addEventListener("click", (ev => {
             if ("true" === ev.target.getAttribute("data-is-result")) {
+                this.score += this.task.success();
                 this.startTask();
             } else {
-                // failed !
+                this.task.failed();
             }
         }));
     }
 
-    start() {
-        this.startTime = new Date().getMilliseconds();
+    validateManualInput() {
+        let manualResultInput = document.getElementById("manual-result-input");
+        let manualInputValue = manualResultInput.value;
+        let correctResult = this.task.result.toString();
+
+        if (manualInputValue.length < correctResult.length) {
+            return "pending";
+        }
+
+        if (manualInputValue === correctResult) {
+            return "success";
+        }
+
+        return "failed";
+    }
+
+    start(parameterses) {
+        this.score = 0;
+        this.parameterses = parameterses.filter(function (value) {
+            return value.selected;
+        });
+
         this.startTask();
     }
 
@@ -56,6 +84,7 @@ class Game {
     }
 
     setUiStates() {
+        document.getElementById("score").textContent = this.score;
         document.getElementById("task-text").innerHTML = this.task.text;
         let multipleResultsDiv = document.getElementById("multiple-results");
         let manualResultDiv = document.getElementById("manual-result");
