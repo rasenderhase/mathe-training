@@ -6,7 +6,7 @@ export let SimpleMultiplication = {
         let mult1 = Utility.random(10);
         let mult2 = Utility.random(10);
 
-        let text = mult1 + "&middot;" + mult2 + " =&nbsp;";
+        let text = mult1 + "&middot;" + mult2 + " =";
 
         let result = mult1 * mult2;
 

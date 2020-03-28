@@ -13,4 +13,5 @@ document.getElementById("parameters-form").addEventListener("submit", (ev) => {
         value.evaluate();
     });
     new Game(parameters).start();
+    document.getElementById("result-form").scrollIntoView();
 });

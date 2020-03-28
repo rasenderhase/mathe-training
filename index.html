@@ -23,17 +23,21 @@
             </div>
         </div>
     </header>
-    <form id="parameters-form" role="form">
+    <form id="parameters-form" action="#result-form" role="form">
         <fieldset id="SimpleMultiplication">
             <legend>Kleines 1 mal 1</legend>
             <ul>
                 <li>
-                    <label for="SimpleMultiplication-selected">Auswähhlen</label><input
-                        id="SimpleMultiplication-selected" name="selected" type="checkbox" checked="checked">
+                    <label class="checkbox-container">
+                        <input id="SimpleMultiplication-selected" name="selected" type="checkbox" checked="checked" aria-label="auswählen">
+                        <span class="checkmark"></span>
+                    </label>
                 </li>
                 <li>
-                    <label for="SimpleMultiplication-difficulty">Schwierigkeitsgrad</label><input
-                        id="SimpleMultiplication-difficulty" name="difficulty" type="range" min="1" max="10">
+                    <label for="SimpleMultiplication-difficulty">Schwierigkeitsgrad</label>
+                    <div class="slidecontainer">
+                        <input id="SimpleMultiplication-difficulty" name="difficulty" type="range" min="1" max="10" class="slider">
+                    </div>
                 </li>
             </ul>
         </fieldset>
@@ -41,10 +45,12 @@
     </form>
     <form id="result-form" class="result-form">
         <div id="task-text"></div>
-        <div id="manual-result" style="display: none"><label for="manual-result-input" aria-label="ist gleich"></label><input id="manual-result-input" name="manual-result" type="number" required="required"></div>
+        <div id="manual-result" style="display: none">
+            <label for="manual-result-input" aria-label="ist gleich"></label><input id="manual-result-input" name="manual-result" type="number" required="required">
+            <button id="confirm" type="submit">OK</button>
+        </div>
         <span id="multiple-results" style="display: none"></span>
         <div class="clear-float"></div>
-        <button id="confirm" type="submit">OK</button>
         <button id="finish" type="button">Beenden</button>
     </form>
 </main>
