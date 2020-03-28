@@ -1,4 +1,4 @@
-import {Task} from "./task.js"
+import * as Task from "./task.js"
 import * as Utility from "../utility.js"
 
 const BASE_DIFFICULTY = 2;
@@ -12,21 +12,7 @@ export let SimpleMultiplication = {
 
         let result = mult1 * mult2;
 
-        let multipleChoiceResults = [];
-        if (paremeters.difficulty < 10) {
-            for (let i = 0; i < paremeters.difficulty; i++) {
-                let wrongResult;
-
-                do {
-                    wrongResult = Utility.random(100);
-                } while (wrongResult === result || multipleChoiceResults.includes(wrongResult));
-                multipleChoiceResults.push(wrongResult);
-            }
-            multipleChoiceResults.splice(Utility.random(0, paremeters.difficulty), 0, result);
-        }
-
-        let difficulty = paremeters.difficulty * BASE_DIFFICULTY;
-
-        return new Task(text, result, multipleChoiceResults, difficulty);
+        let max = 100;
+        return Task.createTask(paremeters, max, result, text, BASE_DIFFICULTY);
     }
 };

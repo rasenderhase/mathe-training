@@ -24,7 +24,7 @@
         </div>
     </header>
     <form id="parameters-form" action="#result-form" role="form">
-        <fieldset id="SimpleAddition">
+        <fieldset id="Addition">
             <legend>Addition</legend>
             <ul>
                 <li>
@@ -40,8 +40,29 @@
                     </div>
                 </li>
                 <li>
-                    <label for="Addition-to">Zahlen bis</label>
-                    <input id="Addition-to" name="to" type="number" min="10" value="10">
+                    <label for="Addition-max">Zahlen bis</label>
+                    <input id="Addition-max" name="max" type="number" min="10" max="1000" value="10">
+                </li>
+            </ul>
+        </fieldset>
+        <fieldset id="Subtraction">
+            <legend>Subtraktion</legend>
+            <ul>
+                <li>
+                    <label class="checkbox-container">
+                        <input id="Subtraction-selected" name="selected" type="checkbox" checked="checked" aria-label="auswählen">
+                        <span class="checkmark"></span>
+                    </label>
+                </li>
+                <li>
+                    <label for="Subtraction-difficulty">Schwierigkeitsgrad</label>
+                    <div class="slidecontainer">
+                        <input id="Subtraction-difficulty" name="difficulty" type="range" min="1" max="10" class="slider">
+                    </div>
+                </li>
+                <li>
+                    <label for="Subtraction-max">Zahlen bis</label>
+                    <input id="Subtraction-max" name="max" type="number" min="10" max="1000" value="10">
                 </li>
             </ul>
         </fieldset>

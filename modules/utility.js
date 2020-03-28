@@ -1,5 +1,8 @@
 
 export function random (min, max) {
+    if (min === max) {
+        return min;
+    }
     if (!max) {
         max = min;
         min = 1;

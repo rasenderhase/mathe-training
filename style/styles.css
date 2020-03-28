@@ -111,6 +111,10 @@ input {
     position: relative;
 }
 
+input[name="max"] {
+    width: 4em;
+}
+
 .result-form {
     font-size: 2em;
     font-family: var(--font-family-result);
