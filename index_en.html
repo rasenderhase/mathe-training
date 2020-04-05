@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="de">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta property="og:title" content="Mathe-Training">
-    <meta property="og:description" content="Mathe-Training">
-    <meta property="og:url" content="https://rasenderhase.github.io/mathe-training/">
+    <meta property="og:title" content="Math Training">
+    <meta property="og:description" content="Math Training">
+    <meta property="og:url" content="https://rasenderhase.github.io/mathe-training/index_en.html">
     <meta property="og:image" content="img/number.png">
     <link rel="shortcut icon" href="img/number.png" type="image/x-icon"/>
     <link rel="apple-touch-icon" href="img/number.png">
@@ -17,14 +17,14 @@
 <body>
 <nav id="navigation" class="navigation">
     <ul>
-        <li><a href="index_en.html" class="" aria-label="English">🇬🇧</a></li>
+        <li><a href="index.html" class="" aria-label="Deutsch">🇩🇪</a></li>
     </ul>
 </nav>
 <main id="page" class="page">
     <header class="banner" role="banner" aria-labelledby="hero-label">
         <div class="hero-box">
             <div class="hero">
-                <h1 id="hero-label">Mathe-Training</h1>
+                <h1 id="hero-label">Math Training</h1>
             </div>
         </div>
     </header>
@@ -39,19 +39,19 @@
                     </label>
                 </li>
                 <li>
-                    <label for="Addition-difficulty">Schwierigkeitsgrad</label>
+                    <label for="Addition-difficulty">Difficulty</label>
                     <div class="slidecontainer">
                         <input id="Addition-difficulty" name="difficulty" type="range" min="1" max="10" class="slider">
                     </div>
                 </li>
                 <li>
-                    <label for="Addition-max">Zahlen bis</label>
+                    <label for="Addition-max">Numbers up to</label>
                     <input id="Addition-max" name="max" type="number" min="10" max="1000" value="10">
                 </li>
             </ul>
         </fieldset>
         <fieldset id="Subtraction">
-            <legend>Subtraktion</legend>
+            <legend>Subtraction</legend>
             <ul>
                 <li>
                     <label class="checkbox-container">
@@ -60,19 +60,19 @@
                     </label>
                 </li>
                 <li>
-                    <label for="Subtraction-difficulty">Schwierigkeitsgrad</label>
+                    <label for="Subtraction-difficulty">Difficulty</label>
                     <div class="slidecontainer">
                         <input id="Subtraction-difficulty" name="difficulty" type="range" min="1" max="10" class="slider">
                     </div>
                 </li>
                 <li>
-                    <label for="Subtraction-max">Zahlen bis</label>
+                    <label for="Subtraction-max">Numbers up to</label>
                     <input id="Subtraction-max" name="max" type="number" min="10" max="1000" value="10">
                 </li>
             </ul>
         </fieldset>
         <fieldset id="SimpleMultiplication">
-            <legend>1 mal 1</legend>
+            <legend>Multiplication</legend>
             <ul>
                 <li>
                     <label class="checkbox-container">
@@ -81,18 +81,18 @@
                     </label>
                 </li>
                 <li>
-                    <label for="SimpleMultiplication-difficulty">Schwierigkeitsgrad</label>
+                    <label for="SimpleMultiplication-difficulty">Difficulty</label>
                     <div class="slidecontainer">
                         <input id="SimpleMultiplication-difficulty" name="difficulty" type="range" min="1" max="10" class="slider">
                     </div>
                 </li>
                 <li>
-                    <label for="SimpleMultiplication-max">Zahlen bis</label>
+                    <label for="SimpleMultiplication-max">Numbers up to</label>
                     <input id="SimpleMultiplication-max" name="max" type="number" min="2" max="20" value="10">
                 </li>
             </ul>
         </fieldset>
-        <button id="start" type="submit">Starten</button>
+        <button id="start" type="submit">Start</button>
     </form>
     <form id="result-form" class="result-form">
         <div id="task-text"></div>
@@ -102,7 +102,7 @@
         </div>
         <span id="multiple-results" style="display: none"></span>
         <div class="clear-float"></div>
-        <button id="finish" type="button">Beenden</button><p class="score">Punkte: <span id="score"></span></p>
+        <button id="finish" type="button">Finish</button><p class="score">Score: <span id="score"></span></p>
     </form>
 </main>
 <footer class="footer" role="contentinfo">

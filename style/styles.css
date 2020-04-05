@@ -27,6 +27,25 @@ body {
     max-width: 1000px;
     height: 100%;
     background-color: var(--color-primary);
+    position: relative;
+}
+
+nav {
+    position: absolute;
+    top: 0;
+    width: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+}
+
+nav li {
+    text-align: right;
+}
+
+nav a {
+    text-decoration: none;
 }
 
 main {
