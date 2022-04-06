@@ -4,45 +4,6 @@ import * as Utility from "./utility.js"
 class Game {
     constructor() {
         this.score = 0;
-
-        // parse manual input on submit
-        document.getElementById("result-form").addEventListener("submit", (ev => {
-            ev.preventDefault();
-            let status = this.validateManualInput();
-            if (status === "success") {
-                this.score += this.task.success();
-                this.startTask();
-            } else {
-                this.task.failed();
-                let manualResultInput = document.getElementById("manual-result-input");
-                manualResultInput.focus();
-                manualResultInput.select();
-            }
-        }));
-
-        // automatic parse after input
-        document.getElementById("manual-result-input").addEventListener("keyup", (() => {
-            let status = this.validateManualInput();
-            if (status === "success") {
-                this.score += this.task.success();
-                this.startTask();
-            } else if (status === "failed") {
-                this.task.failed();
-                let manualResultInput = document.getElementById("manual-result-input");
-                manualResultInput.focus();
-                manualResultInput.select();
-            }
-        }));
-
-        // click on multiple choice input
-        document.getElementById("multiple-results").addEventListener("click", (ev => {
-            if ("true" === ev.target.getAttribute("data-is-result")) {
-                this.score += this.task.success();
-                this.startTask();
-            } else {
-                this.task.failed();
-            }
-        }));
     }
 
     validateManualInput() {
@@ -62,6 +23,45 @@ class Game {
     }
 
     start(parameterses) {
+        // parse manual input on submit
+        document.getElementById("result-form")?.addEventListener("submit", (ev => {
+            ev.preventDefault();
+            let status = this.validateManualInput();
+            if (status === "success") {
+                this.score += this.task.success();
+                this.startTask();
+            } else {
+                this.task.failed();
+                let manualResultInput = document.getElementById("manual-result-input");
+                manualResultInput.focus();
+                manualResultInput.select();
+            }
+        }));
+
+        // automatic parse after input
+        document.getElementById("manual-result-input")?.addEventListener("keyup", (() => {
+            let status = this.validateManualInput();
+            if (status === "success") {
+                this.score += this.task.success();
+                this.startTask();
+            } else if (status === "failed") {
+                this.task.failed();
+                let manualResultInput = document.getElementById("manual-result-input");
+                manualResultInput.focus();
+                manualResultInput.select();
+            }
+        }));
+
+        // click on multiple choice input
+        document.getElementById("multiple-results")?.addEventListener("click", (ev => {
+            if ("true" === ev.target.getAttribute("data-is-result")) {
+                this.score += this.task.success();
+                this.startTask();
+            } else {
+                this.task.failed();
+            }
+        }));
+
         this.score = 0;
         this.parameterses = parameterses.filter(function (value) {
             return value.selected;

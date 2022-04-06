@@ -9,7 +9,7 @@
     --color-background2: #2e485a;
     --color-background3: #d3513c;
     --font-family-result: 'Annie Use Your Telescope', cursive;
-    --form-height: 25%;
+    --form-height: calc(100% - 1.67em - 11.5px);
 }
 
 * {
@@ -17,7 +17,7 @@
 }
 
 html {
-    height: 400%;
+    height: 100%;
 }
 
 body {
@@ -26,7 +26,7 @@ body {
     padding: 0;
     margin: 0 auto;
     max-width: 1000px;
-    height: 100%;
+    height: calc(100% - 0.67em - 11.5px);
     background-color: var(--color-primary);
     position: relative;
 }
@@ -50,7 +50,7 @@ nav a {
 }
 
 main {
-    height: 100%;
+    height: calc(100% - 0.67em - 11.5px);
     color: white;
 }
 
@@ -89,6 +89,7 @@ button:active {
 
 .banner {
     color: var(--color-background1);
+    height: 3.33em;
 }
 
 fieldset {

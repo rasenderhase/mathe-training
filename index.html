@@ -28,9 +28,10 @@
             </div>
         </div>
     </header>
-    <form id="parameters-form" action="#result-form" role="form">
+    <form id="parameters-form" action="result.html" role="form">
         <fieldset id="Addition">
             <legend>Addition</legend>
+            <input type="hidden" name="id" value="Addition">
             <ul>
                 <li>
                     <label class="checkbox-container">
@@ -52,6 +53,7 @@
         </fieldset>
         <fieldset id="Subtraction">
             <legend>Subtraktion</legend>
+            <input type="hidden" name="id" value="Subtraction">
             <ul>
                 <li>
                     <label class="checkbox-container">
@@ -73,6 +75,7 @@
         </fieldset>
         <fieldset id="SimpleMultiplication">
             <legend>1 mal 1</legend>
+            <input type="hidden" name="id" value="SimpleMultiplication">
             <ul>
                 <li>
                     <label class="checkbox-container">
@@ -93,16 +96,6 @@
             </ul>
         </fieldset>
         <button id="start" type="submit">Starten</button>
-    </form>
-    <form id="result-form" class="result-form">
-        <div id="task-text"></div>
-        <div id="manual-result" style="display: none">
-            <label for="manual-result-input" aria-label="ist gleich"></label><input id="manual-result-input" name="manual-result" type="number" required="required">
-            <button id="confirm" type="submit">OK</button>
-        </div>
-        <span id="multiple-results" style="display: none"></span>
-        <div class="clear-float"></div>
-        <button id="finish" type="button">Beenden</button><p class="score">Punkte: <span id="score"></span></p>
     </form>
 </main>
 <footer class="footer" role="contentinfo">
